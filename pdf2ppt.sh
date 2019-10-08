@@ -1,13 +1,5 @@
 #!/bin/bash
 
-# Script to convert PDF file to PPTX presentation.
-#
-# Dependencies:
-# * pdftk
-# * imagemagick
-# python3 with tqdm, python-pptx packages
-# based on from https://gist.github.com/yura/670974
-
 PDF=$1
 
 echo "Processing $PDF"
