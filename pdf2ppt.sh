@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to convert PDF file to JPG images
+# Script to convert PDF file to PPTX presentation.
 #
 # Dependencies:
 # * pdftk
@@ -21,8 +21,6 @@ pdftk "$PDF" dump_data output "$DIR"/metadata.txt
 
 echo '  Converting pages to JPEG files...'
 for i in "$DIR"/*.pdf; do
-  # convert -colorspace RGB -interlace none -density 300x300 -quality 100 "$i" "$DIR"/`basename "$i" .pdf`.jpg
-  # convert -colorspace RGB -interlace none -quality 100 "$i" "$DIR"/`basename "$i" .pdf`.jpg
   convert -colorspace RGB -interlace none -quality 75 "$i" "$DIR"/`basename "$i" .pdf`.jpg
 done
 echo '  Converting JPEG files to PPTX...'
