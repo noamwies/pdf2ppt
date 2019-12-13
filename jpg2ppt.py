@@ -10,13 +10,13 @@ BLANK = 6
 
 
 def create_presentation_from_images(name, images):
-	prs = Presentation()
-	left = top = Inches(0)
-	slide_layout = prs.slide_layouts[BLANK]
-	for img_path in tqdm(images):
-		slide = prs.slides.add_slide(slide_layout)
-		pic = slide.shapes.add_picture(img_path, left, top)
-	prs.save(name)
+    prs = Presentation()
+    left = top = Inches(0)
+    slide_layout = prs.slide_layouts[BLANK]
+    for img_path in tqdm(images):
+        slide = prs.slides.add_slide(slide_layout)
+        pic = slide.shapes.add_picture(img_path, left, top)
+    prs.save(name)
 
 
 def get_config():
@@ -27,10 +27,10 @@ def get_config():
 
 
 def main():
-	config = get_config()
-	images = sorted(glob.glob(config.images_regex))
-	create_presentation_from_images(config.output_path, images)
+    config = get_config()
+    images = sorted(glob.glob(config.images_regex))
+    create_presentation_from_images(config.output_path, images)
 
-	
+    
 if __name__ == '__main__':
-	main()
+    main()
